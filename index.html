@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5eddf">
+  <meta name="description" content="المساحة الشخصية لـ JoJo: رحلة في التعلم والإبداع واستكشاف التقنية.">
+  <title>JoJo — A Curious Mind</title>
+  <style>
+    :root {
+      --cream: #f5eddf;
+      --paper: #fffaf1;
+      --brown: #493329;
+      --muted: #866d5c;
+      --accent: #c18b63;
+      --line: #e0d1bd;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--brown);
+      font-family: Tahoma, Arial, sans-serif;
+      line-height: 1.8;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    .wrap {
+      width: min(1080px, 90%);
+      margin: auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      font-size: 29px;
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+
+    .logo span { color: var(--accent); }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 35px;
+      align-items: center;
+      padding: 75px 0 65px;
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 78px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin: 15px 0;
+    }
+
+    h1 em {
+      display: block;
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .intro {
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 19px;
+      border: 1px solid var(--brown);
+      border-radius: 7px;
+      font: inherit;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .primary {
+      background: var(--brown);
+      color: var(--paper);
+    }
+
+    .art {
+      background: #e8d8c2;
+      border: 1px solid var(--line);
+      border-radius: 48% 48% 16px 16px;
+      min-height: 300px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .art::before {
+      content: "✳";
+      font-size: 130px;
+      color: #c9a783;
+      position: absolute;
+      left: 10px;
+      top: 40px;
+      opacity: .65;
+    }
+
+    .art-note {
+      position: relative;
+      background: var(--paper);
+      padding: 15px;
+      max-width: 220px;
+      transform: rotate(-4deg);
+      box-shadow: 0 8px 20px #49332912;
+    }
+
+    .art-bottom {
+      position: relative;
+      align-self: flex-end;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    section { padding: 38px 0; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 22px;
+    }
+
+    h2 { font-size: 25px; margin: 0 0 15px; }
+
+    .section-head small { color: var(--muted); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px #49332910;
+    }
+
+    .symbol { font-size: 28px; }
+
+    .card h3 { margin: 8px 0; font-size: 18px; }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .journey {
+      background: var(--brown);
+      color: var(--cream);
+      padding: 28px;
+      border-radius: 14px;
+    }
+
+    .journey p { color: #e1cdb8; }
+
+    .status {
+      display: inline-block;
+      border: 1px solid #bfa58b;
+      padding: 5px 12px;
+      border-radius: 30px;
+      font-size: 12px;
+    }
+
+    .contact {
+      background: #e8d8c2;
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    footer {
+      padding: 25px 0;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity .6s, transform .6s;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 700px) {
+      .hero { grid-template-columns: 1fr; padding: 45px 0; }
+      .art { min-height: 220px; }
+      .grid { grid-template-columns: 1fr; }
+      header { align-items: flex-start; }
+      nav { max-width: 230px; gap: 8px 13px; }
+      h1 { font-size: 48px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="logo" href="#home" aria-label="JoJo home">Jo<span>Jo.</span></a>
+      <nav aria-label="القائمة الرئيسية">
+        <a href="#about">عني</a>
+        <a href="#interests">اهتماماتي</a>
+        <a href="#journey">رحلتي</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="reveal">
+          <div class="eyebrow">HELLO, CURIOUS MIND ✳</div>
+          <h1>A mind full of questions.<em>A world of ideas.</em></h1>
+          <p class="intro">
+            أنا JoJo. أحب التعلّم، وتجربة الأفكار الجديدة،
+            واكتشاف عالم التقنية والذكاء الاصطناعي.
+            هذه مساحتي لأوثّق رحلتي وأحوّل فضولي إلى خطوات عملية.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="#journey">اكتشفي رحلتي ↙</a>
+            <a class="btn" href="#contact">لنتواصل</a>
+          </div>
+        </div>
+
+        <div class="art reveal" aria-label="لوحة إبداعية تعبّر عن حب التعلّم">
+          <div class="art-note">
+            <strong>Dear future me,</strong>
+            <br>Keep learning.
+            <br>Keep exploring.
+            <br>Keep creating. ♡
+          </div>
+          <div class="art-bottom">One step at a time ✳</div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="section-head">
+          <h2>وراء كل فضول، حكاية.</h2>
+          <small>01 / ABOUT ME</small>
+        </div>
+        <p class="intro reveal">
+          أؤمن أن البداية لا تحتاج إلى أن أكون خبيرة؛
+          تحتاج إلى الرغبة في التعلّم والاستعداد للتجربة.
+          أنشأت هذه المساحة لتكون سجلًا حقيقيًا لما أتعلمه
+          وما سأبنيه مع الوقت.
+        </p>
+      </section>
+
+      <section id="interests">
+        <div class="section-head">
+          <h2>ما الذي يثير فضولي؟</h2>
+          <small>02 / MY INTERESTS</small>
+        </div>
+        <div class="grid">
+          <article class="card reveal">
+            <div class="symbol">✳</div>
+            <h3>التقنية</h3>
+            <p>استكشاف الأدوات الرقمية وفهم كيف تعمل.</p>
+          </article>
+          <article class="card reveal">
+            <div class="symbol">⌘</div>
+            <h3>الذكاء الاصطناعي</h3>
+            <p>التعرّف على تطبيقاته وكيف يمكن أن يساعد في حل المشكلات.</p>
+          </article>
+          <article class="card reveal">
+            <div class="symbol">✎</div>
+            <h3>التجربة والإبداع</h3>
+            <p>تحويل الأفكار إلى تجارب صغيرة والتعلّم من نتائجها.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="journey">
+        <div class="section-head">
+          <h2>رحلتي، كما هي.</h2>
+          <small>03 / THE JOURNEY</small>
+        </div>
+        <div class="journey reveal">
+          <span class="status">● في مرحلة التعلّم</span>
+          <h2>البداية ليست نقطة ضعف.</h2>
+          <p>
+            هذا الموقع هو أول مساحة أوثّق فيها رحلتي الرقمية.
+            سأضيف هنا المشاريع التي أنجزها فعلًا،
+            والمهارات التي أتعلمها، والدروس التي أكتسبها.
+          </p>
+          <p>لا إنجازات مختلقة، ولا وعود فارغة؛ فقط تطوّر حقيقي.</p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact reveal">
+          <div class="eyebrow">SOMETHING GOOD STARTS WITH A HELLO</div>
+          <h2>لديك فكرة؟ لنتحدث.</h2>
+          <p>يمكنك إضافة بريد مهني هنا عندما تكونين مستعدة لمشاركته.</p>
+          <button class="btn primary" id="hello" type="button">رسالة ترحيب ✳</button>
+          <p id="message" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      صنعته JoJo بحب التعلّم والتجربة · © <span id="year"></span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("hello").addEventListener("click", function () {
+      document.getElementById("message").textContent =
+        "شكرًا لزيارتك مساحتي الصغيرة. أتمنى أن نلتقي مجددًا! ♡";
+    });
+
+    const items = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      items.forEach((item) => observer.observe(item));
+    } else {
+      items.forEach((item) => item.classList.add("show"));
+    }
+  </script>
+</body>
+                                  </html>
+                                  
