@@ -3,293 +3,165 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5eddf">
-  <meta name="description" content="المساحة الشخصية لـ JoJo: رحلة في التعلم والإبداع واستكشاف التقنية.">
-  <title>JoJo — A Curious Mind</title>
+  <meta name="description" content="JoJo | ملف أعمال شخصي لاستكشاف التقنية والعمل عن بُعد والمشاريع العملية.">
+  <title>JoJo | Personal Portfolio</title>
   <style>
     :root {
       --cream: #f5eddf;
       --paper: #fffaf1;
       --brown: #493329;
-      --muted: #866d5c;
-      --accent: #c18b63;
+      --muted: #806b5c;
+      --accent: #b77e53;
       --line: #e0d1bd;
     }
-
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
       background: var(--cream);
       color: var(--brown);
       font-family: Tahoma, Arial, sans-serif;
-      line-height: 1.8;
+      line-height: 1.85;
     }
-
     a { color: inherit; text-decoration: none; }
-
-    button, a { -webkit-tap-highlight-color: transparent; }
-
-    .wrap {
-      width: min(1080px, 90%);
-      margin: auto;
-    }
-
+    .wrap { width: min(1000px, 90%); margin: auto; }
     header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--line);
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 16px;
+      padding: 20px 0; border-bottom: 1px solid var(--line);
     }
-
-    .logo {
-      font-size: 29px;
-      font-weight: 900;
-      letter-spacing: -2px;
-    }
-
+    .logo { font-size: 29px; font-weight: 900; }
     .logo span { color: var(--accent); }
-
-    nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      font-size: 13px;
-    }
-
-    nav a:hover { color: var(--accent); }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 35px;
-      align-items: center;
-      padding: 75px 0 65px;
-    }
-
-    .eyebrow {
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: 2px;
-      font-weight: bold;
-    }
-
-    h1 {
-      font-size: clamp(42px, 8vw, 78px);
-      line-height: 1.12;
-      letter-spacing: -2px;
-      margin: 15px 0;
-    }
-
-    h1 em {
-      display: block;
-      color: var(--accent);
-      font-style: normal;
-    }
-
-    .intro {
-      color: var(--muted);
-      max-width: 520px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 25px;
-    }
-
+    nav { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; }
+    nav a:hover, .text-link:hover { color: var(--accent); }
+    button, .btn { font: inherit; cursor: pointer; }
     .btn {
-      display: inline-block;
-      padding: 10px 19px;
-      border: 1px solid var(--brown);
-      border-radius: 7px;
-      font: inherit;
-      font-size: 14px;
-      cursor: pointer;
+      display: inline-block; padding: 9px 16px;
+      border: 1px solid var(--brown); border-radius: 8px;
+      font-size: 14px; background: transparent;
     }
-
-    .primary {
-      background: var(--brown);
-      color: var(--paper);
+    .primary { background: var(--brown); color: var(--paper); }
+    .hero {
+      display: grid; grid-template-columns: 1.2fr .8fr;
+      gap: 35px; align-items: center; padding: 65px 0 55px;
     }
-
+    .eyebrow { color: var(--muted); font-size: 12px; font-weight: bold; letter-spacing: 1px; }
+    h1 { font-size: clamp(36px, 6vw, 64px); line-height: 1.25; margin: 12px 0; }
+    h1 em { display: block; color: var(--accent); font-style: normal; }
+    .intro { color: var(--muted); max-width: 570px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
     .art {
-      background: #e8d8c2;
-      border: 1px solid var(--line);
-      border-radius: 48% 48% 16px 16px;
-      min-height: 300px;
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      overflow: hidden;
+      background: #e8d8c2; border: 1px solid var(--line);
+      border-radius: 48% 48% 14px 14px; min-height: 280px;
+      padding: 22px; display: flex; flex-direction: column;
+      justify-content: space-between; overflow: hidden;
     }
-
-    .art::before {
-      content: "✳";
-      font-size: 130px;
-      color: #c9a783;
-      position: absolute;
-      left: 10px;
-      top: 40px;
-      opacity: .65;
-    }
-
     .art-note {
-      position: relative;
-      background: var(--paper);
-      padding: 15px;
-      max-width: 220px;
-      transform: rotate(-4deg);
-      box-shadow: 0 8px 20px #49332912;
+      background: var(--paper); padding: 17px;
+      max-width: 235px; transform: rotate(-3deg);
     }
-
-    .art-bottom {
-      position: relative;
-      align-self: flex-end;
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    section { padding: 38px 0; }
-
+    .art-bottom { align-self: flex-end; font-size: 20px; font-weight: bold; }
+    section { padding: 30px 0; scroll-margin-top: 20px; }
     .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 10px;
-      border-bottom: 1px solid var(--line);
-      margin-bottom: 22px;
+      display: flex; justify-content: space-between;
+      align-items: baseline; gap: 10px;
+      border-bottom: 1px solid var(--line); margin-bottom: 20px;
     }
-
-    h2 { font-size: 25px; margin: 0 0 15px; }
-
+    h2 { font-size: 24px; margin: 0 0 14px; }
     .section-head small { color: var(--muted); }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
     .card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 20px;
-      transition: transform .2s, box-shadow .2s;
+      background: var(--paper); border: 1px solid var(--line);
+      border-radius: 12px; padding: 20px;
     }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 25px #49332910;
-    }
-
-    .symbol { font-size: 28px; }
-
     .card h3 { margin: 8px 0; font-size: 18px; }
-
-    .card p {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 0;
+    .card p { color: var(--muted); font-size: 14px; }
+    .symbol { font-size: 27px; }
+    .tag {
+      display: inline-block; border: 1px solid var(--line);
+      border-radius: 30px; padding: 3px 10px;
+      font-size: 12px; margin: 3px;
     }
-
     .journey {
-      background: var(--brown);
-      color: var(--cream);
-      padding: 28px;
-      border-radius: 14px;
+      background: var(--brown); color: var(--cream);
+      padding: 25px; border-radius: 14px;
     }
-
     .journey p { color: #e1cdb8; }
-
     .status {
-      display: inline-block;
-      border: 1px solid #bfa58b;
-      padding: 5px 12px;
-      border-radius: 30px;
-      font-size: 12px;
+      display: inline-block; border: 1px solid #bfa58b;
+      padding: 4px 11px; border-radius: 30px; font-size: 12px;
     }
-
     .contact {
-      background: #e8d8c2;
-      padding: 25px;
-      border-radius: 12px;
+      background: #e8d8c2; padding: 25px; border-radius: 12px;
     }
-
-    footer {
-      padding: 25px 0;
-      color: var(--muted);
-      font-size: 12px;
-      text-align: center;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(15px);
-      transition: opacity .6s, transform .6s;
-    }
-
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
+    footer { padding: 25px 0; color: var(--muted); font-size: 12px; text-align: center; }
+    .en { display: none; }
+    body.english { direction: ltr; }
+    body.english .ar { display: none; }
+    body.english .en { display: block; }
+    body.english nav { direction: ltr; }
+    body.english .section-head { direction: ltr; }
+    body.english .art-note { transform: rotate(3deg); }
     @media (max-width: 700px) {
-      .hero { grid-template-columns: 1fr; padding: 45px 0; }
-      .art { min-height: 220px; }
+      header { align-items: flex-start; flex-wrap: wrap; }
+      nav { gap: 8px 12px; }
+      .hero { grid-template-columns: 1fr; padding: 40px 0; }
+      .art { min-height: 210px; }
       .grid { grid-template-columns: 1fr; }
-      header { align-items: flex-start; }
-      nav { max-width: 230px; gap: 8px 13px; }
-      h1 { font-size: 48px; }
+      h1 { font-size: 42px; }
     }
-
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-      }
-      .reveal { opacity: 1; transform: none; }
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <a class="logo" href="#home" aria-label="JoJo home">Jo<span>Jo.</span></a>
-      <nav aria-label="القائمة الرئيسية">
+      <a class="logo" href="#home">Jo<span>Jo.</span></a>
+      <nav class="ar" aria-label="القائمة الرئيسية">
         <a href="#about">عني</a>
-        <a href="#interests">اهتماماتي</a>
-        <a href="#journey">رحلتي</a>
+        <a href="#skills">مهاراتي</a>
+        <a href="#projects">مشاريعي</a>
         <a href="#contact">تواصل</a>
       </nav>
+      <nav class="en" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="btn" id="language" type="button" aria-label="Switch language">English</button>
     </header>
 
     <main>
       <section class="hero" id="home">
-        <div class="reveal">
-          <div class="eyebrow">HELLO, CURIOUS MIND ✳</div>
-          <h1>A mind full of questions.<em>A world of ideas.</em></h1>
-          <p class="intro">
-            أنا JoJo. أحب التعلّم، وتجربة الأفكار الجديدة،
-            واكتشاف عالم التقنية والذكاء الاصطناعي.
-            هذه مساحتي لأوثّق رحلتي وأحوّل فضولي إلى خطوات عملية.
+        <div>
+          <div class="eyebrow ar">ملف أعمال شخصي · PERSONAL PORTFOLIO</div>
+          <div class="eyebrow en">PERSONAL PORTFOLIO · LEARNING BY DOING</div>
+          <h1 class="ar">أتعلم اليوم،<em>وأبني خطوتي القادمة.</em></h1>
+          <h1 class="en">Learning today,<em>building my next step.</em></h1>
+          <p class="intro ar">
+            مرحبًا، أنا JoJo. أستكشف مجالات التقنية والعمل عن بُعد،
+            وأطوّر مهاراتي من خلال التعلّم والتجربة وإنشاء مشاريع عملية.
+            هذه المساحة تعرض رحلتي وما أنجزه فعلًا.
+          </p>
+          <p class="intro en">
+            Hi, I'm JoJo. I'm exploring technology and remote work,
+            developing my skills through learning, experimentation,
+            and practical projects. This portfolio shares my progress
+            and the work I actually create.
           </p>
           <div class="actions">
-            <a class="btn primary" href="#journey">اكتشفي رحلتي ↙</a>
-            <a class="btn" href="#contact">لنتواصل</a>
+            <a class="btn primary ar" href="#projects">شاهدي مشاريعي ↙</a>
+            <a class="btn primary en" href="#projects">View my projects ↙</a>
+            <a class="btn ar" href="#contact">روابط التواصل</a>
+            <a class="btn en" href="#contact">Contact links</a>
           </div>
         </div>
-
-        <div class="art reveal" aria-label="لوحة إبداعية تعبّر عن حب التعلّم">
+        <div class="art" aria-label="Learning and creativity">
           <div class="art-note">
             <strong>Dear future me,</strong>
             <br>Keep learning.
@@ -302,99 +174,158 @@
 
       <section id="about">
         <div class="section-head">
-          <h2>وراء كل فضول، حكاية.</h2>
-          <small>01 / ABOUT ME</small>
+          <h2 class="ar">نبذة عني</h2>
+          <h2 class="en">About me</h2>
+          <small>01 / ABOUT</small>
         </div>
-        <p class="intro reveal">
-          أؤمن أن البداية لا تحتاج إلى أن أكون خبيرة؛
-          تحتاج إلى الرغبة في التعلّم والاستعداد للتجربة.
-          أنشأت هذه المساحة لتكون سجلًا حقيقيًا لما أتعلمه
-          وما سأبنيه مع الوقت.
+        <p class="intro ar">
+          أنا في بداية رحلتي المهنية، وأسعى لاكتشاف المجال الذي يناسبني
+          في العمل عن بُعد. أؤمن بأهمية التعلّم المستمر، والتجربة العملية،
+          وتطوير المهارات خطوة بخطوة. أستخدم هذا الموقع لتوثيق تقدمي
+          وعرض مشاريعي بوضوح وصدق.
+        </p>
+        <p class="intro en">
+          I'm at the beginning of my professional journey and exploring
+          which remote-work field suits me best. I value continuous
+          learning, hands-on practice, and steady progress. I use this
+          website to document my learning and present my projects honestly.
         </p>
       </section>
 
-      <section id="interests">
+      <section id="skills">
         <div class="section-head">
-          <h2>ما الذي يثير فضولي؟</h2>
-          <small>02 / MY INTERESTS</small>
+          <h2 class="ar">مهارات أعمل على تطويرها</h2>
+          <h2 class="en">Skills I'm developing</h2>
+          <small>02 / LEARNING</small>
         </div>
         <div class="grid">
-          <article class="card reveal">
-            <div class="symbol">✳</div>
-            <h3>التقنية</h3>
-            <p>استكشاف الأدوات الرقمية وفهم كيف تعمل.</p>
-          </article>
-          <article class="card reveal">
+          <article class="card">
             <div class="symbol">⌘</div>
-            <h3>الذكاء الاصطناعي</h3>
-            <p>التعرّف على تطبيقاته وكيف يمكن أن يساعد في حل المشكلات.</p>
+            <h3 class="ar">الأدوات الرقمية</h3>
+            <h3 class="en">Digital tools</h3>
+            <p class="ar">أستكشف أدوات العمل عبر الإنترنت وتنظيم المهام.</p>
+            <p class="en">Exploring online tools and task organization.</p>
+            <span class="tag ar">قيد التعلّم</span>
+            <span class="tag en">Learning</span>
           </article>
-          <article class="card reveal">
+          <article class="card">
             <div class="symbol">✎</div>
-            <h3>التجربة والإبداع</h3>
-            <p>تحويل الأفكار إلى تجارب صغيرة والتعلّم من نتائجها.</p>
+            <h3 class="ar">إنشاء صفحات الويب</h3>
+            <h3 class="en">Web page creation</h3>
+            <p class="ar">أنشأت هذا الموقع باستخدام HTML وCSS وبعض JavaScript.</p>
+            <p class="en">Built this website using HTML, CSS, and some JavaScript.</p>
+            <span class="tag ar">مشروع تطبيقي</span>
+            <span class="tag en">Hands-on project</span>
+          </article>
+          <article class="card">
+            <div class="symbol">◎</div>
+            <h3 class="ar">التواصل والتعلّم الذاتي</h3>
+            <h3 class="en">Communication & self-learning</h3>
+            <p class="ar">أعمل على تطوير قدرتي على التعلّم والبحث وحل المشكلات.</p>
+            <p class="en">Working on learning, research, and problem-solving.</p>
+            <span class="tag ar">قيد التطوير</span>
+            <span class="tag en">In progress</span>
+          </article>
+          <article class="card">
+            <div class="symbol">✳</div>
+            <h3 class="ar">اكتشاف مجالات جديدة</h3>
+            <h3 class="en">Exploring new fields</h3>
+            <p class="ar">أجرب مجالات مختلفة لأحدد أين يمكنني تقديم قيمة حقيقية.</p>
+            <p class="en">Exploring different fields to discover where I can contribute.</p>
+            <span class="tag ar">قيد التعلّم</span>
+            <span class="tag en">Learning</span>
           </article>
         </div>
+        <p class="intro ar">ملاحظة: هذه المجالات قيد التعلّم، وليست ادعاءً باحترافها أو امتلاك خبرة وظيفية فيها.</p>
+        <p class="intro en">Note: These are learning areas, not claims of professional expertise or employment experience.</p>
+      </section>
+
+      <section id="projects">
+        <div class="section-head">
+          <h2 class="ar">مشاريعي</h2>
+          <h2 class="en">My projects</h2>
+          <small>03 / PORTFOLIO</small>
+        </div>
+        <article class="card">
+          <div class="symbol">🌐</div>
+          <h3>JoJo — Personal Website</h3>
+          <p class="ar">
+            أول مشروع شخصي لي: موقع متجاوب أنشأته باستخدام HTML وCSS
+            وJavaScript، ونشرته عبر GitHub Pages. أستخدمه لتوثيق
+            تعلّمي وتطوير ملف أعمالي.
+          </p>
+          <p class="en">
+            My first personal project: a responsive website built with
+            HTML, CSS, and JavaScript, published using GitHub Pages.
+            It documents my learning and growing portfolio.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="https://ykhadija794-star.github.io/my-portfolio/" target="_blank" rel="noopener noreferrer">Live website ↗</a>
+            <a class="btn" href="https://github.com/ykhadija794-star/my-portfolio" target="_blank" rel="noopener noreferrer">GitHub repository ↗</a>
+          </div>
+        </article>
       </section>
 
       <section id="journey">
         <div class="section-head">
-          <h2>رحلتي، كما هي.</h2>
-          <small>03 / THE JOURNEY</small>
+          <h2 class="ar">ما أبحث عنه</h2>
+          <h2 class="en">What I'm looking for</h2>
+          <small>04 / NEXT STEP</small>
         </div>
-        <div class="journey reveal">
-          <span class="status">● في مرحلة التعلّم</span>
-          <h2>البداية ليست نقطة ضعف.</h2>
-          <p>
-            هذا الموقع هو أول مساحة أوثّق فيها رحلتي الرقمية.
-            سأضيف هنا المشاريع التي أنجزها فعلًا،
-            والمهارات التي أتعلمها، والدروس التي أكتسبها.
+        <div class="journey">
+          <span class="status ar">● في بداية الرحلة</span>
+          <span class="status en">● Early-career learner</span>
+          <h2 class="ar">فرصة للتعلّم والنمو</h2>
+          <h2 class="en">An opportunity to learn and grow</h2>
+          <p class="ar">
+            أستكشف فرص العمل عن بُعد المناسبة للمبتدئين، وكذلك فرص
+            التدريب والمشاريع الصغيرة التي تساعدني على اكتساب خبرة عملية.
+            سأضيف الأعمال الجديدة إلى هذا الموقع عندما أنجزها.
           </p>
-          <p>لا إنجازات مختلقة، ولا وعود فارغة؛ فقط تطوّر حقيقي.</p>
+          <p class="en">
+            I'm exploring entry-level remote opportunities, internships,
+            and small projects that can help me gain practical experience.
+            I'll add new work to this portfolio as I complete it.
+          </p>
         </div>
       </section>
 
       <section id="contact">
-        <div class="contact reveal">
-          <div class="eyebrow">SOMETHING GOOD STARTS WITH A HELLO</div>
-          <h2>لديك فكرة؟ لنتحدث.</h2>
-          <p>يمكنك إضافة بريد مهني هنا عندما تكونين مستعدة لمشاركته.</p>
-          <button class="btn primary" id="hello" type="button">رسالة ترحيب ✳</button>
-          <p id="message" aria-live="polite"></p>
+        <div class="section-head">
+          <h2 class="ar">التواصل</h2>
+          <h2 class="en">Contact</h2>
+          <small>05 / GET IN TOUCH</small>
+        </div>
+        <div class="contact">
+          <p class="ar">
+            يمكنك الاطلاع على الكود والمشروع عبر GitHub.
+            سأضيف وسيلة التواصل المهنية هنا بعد تجهيزها.
+          </p>
+          <p class="en">
+            You can explore the project and its source code on GitHub.
+            I'll add a professional contact method here once it's ready.
+          </p>
+          <a class="btn primary" href="https://github.com/ykhadija794-star" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
         </div>
       </section>
     </main>
-
     <footer>
-      صنعته JoJo بحب التعلّم والتجربة · © <span id="year"></span>
+      <span class="ar">صُنع بواسطة JoJo — تعلّم مستمر، وخطوات حقيقية.</span>
+      <span class="en">Made by JoJo — continuous learning, real progress.</span>
+      · © <span id="year"></span>
     </footer>
   </div>
-
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    document.getElementById("hello").addEventListener("click", function () {
-      document.getElementById("message").textContent =
-        "شكرًا لزيارتك مساحتي الصغيرة. أتمنى أن نلتقي مجددًا! ♡";
+    const languageButton = document.getElementById("language");
+    languageButton.addEventListener("click", function () {
+      const isEnglish = document.body.classList.toggle("english");
+      document.documentElement.lang = isEnglish ? "en" : "ar";
+      document.documentElement.dir = isEnglish ? "ltr" : "rtl";
+      languageButton.textContent = isEnglish ? "العربية" : "English";
     });
-
-    const items = document.querySelectorAll(".reveal");
-
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-
-      items.forEach((item) => observer.observe(item));
-    } else {
-      items.forEach((item) => item.classList.add("show"));
-    }
   </script>
 </body>
-                                  </html>
-                                  
+  </html>
+  
